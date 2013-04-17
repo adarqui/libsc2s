@@ -1,0 +1,43 @@
+Very small library I needed for another project. All this does is return a string given a sys call number. It's "dynamically configurable" since it parses /usr/share/sc2s every time sc2s_init() is run. Only the .h.t file you specify will be the one that it loads into memory. Everything is loaded into an offset table which refers to a string table, so it's "fast".
+
+How to build/configure/etc?
+
+ make everything
+
+ This will install libsc2s.so into /lib, parse the files in .inc and put them in /usr/share/sc2s, etc.
+
+
+Local test build?
+
+ make t
+
+
+Re-parse a bunch of new header.h files?
+
+ Put them in ./inc then run:
+
+ make ht
+
+
+A quick code example is can be found by typing the following command:
+
+ ed test.c
+
+
+As per the header, the api is pretty simple:
+
+ * Simple little test code..
+ *
+ * The bottom line is:
+ *
+ *  sc = sc2s_init(...)
+ *  scl = sc2s_fill(sc, NULL, "name_of_.h.t")
+ *  str = sc2s_get(scl, <syscall num>)
+ *
+ * That's it. :F
+ 
+
+
+Ok that's it.. Wrote this pretty quick but it should be solid. Time to implement it into my other project.
+
+(fn_t *) adios( (int) -1).
