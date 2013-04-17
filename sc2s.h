@@ -11,6 +11,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
+#define SC_VER 0.1
 #define SC_DIR "/usr/share/sc2s/"
 #define SC_MAX 600 /* Kind of dirty, not really though, especially if you only fill one 'instance' */
 

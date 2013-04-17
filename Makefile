@@ -17,6 +17,7 @@ ht:
 install:
 	make all
 	cp libsc2s.so /lib/
+	cp sc2s.h /usr/include/
 	ldconfig
 	mkdir -p /usr/share/sc2s/
 	make ht
